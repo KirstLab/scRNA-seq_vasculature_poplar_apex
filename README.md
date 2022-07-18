@@ -173,7 +173,8 @@ Generates the heatmaps comparing the expression of orthologs among species
 
 **Inputs:**
 
-* TRADEseq_Phloem_Arabidopsis.csv, Arabidopsis_Phloem_TI.rds
+* TRADEseq_Phloem_Arabidopsis.csv
+* Arabidopsis_Phloem_TI.rds
 * TRADEseq_Phloem_Poplar.csv
 * Poplar_Phloem_TI.rds
 * Ptrichocarpa_533_v4.1.annotation_info.csv
