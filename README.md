@@ -13,6 +13,32 @@ This repository contains the source code necessary to reproduce the results desc
 
 The clustering of the scRNA-seq data was performed on Asc-Seurat v2.1. The clustered datasets used as input for the analysis can be downloaded from FigShare (10.6084/m9.figshare.20321787).
 
+To execute the analysis, R version 4.0 needs to be installed. In addition, the folowing packages are required: 
+
+* Packages from CRAN:
+  * circlize
+  * docopt
+  * ggthemes
+  * grDevices
+  * patchwork
+  * RColorBrewer
+  * Seurat
+  * tidyverse
+  * vroom
+
+* Packages from Bioconductor:
+  * ComplexHeatmap
+  * DropletUtils
+  * SingleCellExperiment
+  * slingshot
+  * tradeSeq
+
+* Packages from dynverse (https://dynverse.org/; Note that those packages depend on Docker [https://www.docker.com/]).
+  * dynfeature
+  * dyno
+  * dynplot
+  * dynwrap
+
 ## Data analysis
 
 Before integrating the datasets, it is possible to show that the two datasets share cell types by comparing the expression of orthologous genes.
@@ -29,9 +55,7 @@ One plot will be generated for each row of the csv file if the listed genes are 
 * Mappings_Populus_1to1_Arabidopsis_oct_28.txt
 
 ```sh
-
 snakemake -c1 -p comparing_species
-
 ```
 
 ### Extracting the raw data from the clustered dataset contained in am RDS files
