@@ -11,9 +11,9 @@
 
 This repository contains the source code necessary to reproduce the results described in the manuscript "Single-cell analysis of the shoot apex vascular system differentiation in Populus."
 
-The clustering of the scRNA-seq data was performed on Asc-Seurat v2.1. The clustered datasets used as input for the analysis can be downloaded from FigShare (10.6084/m9.figshare.20321787).
+The clustering of the scRNA-seq data was performed on Asc-Seurat v2.1. The clustered datasets from Poplar can be downloaded from FigShare (10.6084/m9.figshare.20321787). The arabidopsis dataset was kindly provided by Tian-Qi Zhang, Yu Chen, and Jia-Wei Wang, authors of the paper entitled "A single-cell analysis of the Arabidopsis vegetative shoot apex," Developmental Cell 56, https://doi.org/10.1016/j.devcel.2021.02.021. To execute the code in this repository, readers need to contact the authors to acquire the dataset (in the rds format). Note that the source code expects the file containing the arabidopsis data to be named "vascular_arabidopsis.rds".
 
-To execute the analysis, R version 4.0 needs to be installed. In addition, the folowing packages are required: 
+To execute the analysis, R version 4.0 needs to be installed. In addition, the following packages are required: 
 
 * Packages from CRAN:
   * circlize
@@ -45,11 +45,11 @@ Before integrating the datasets, it is possible to show that the two datasets sh
 
 One plot will be generated for each row of the csv file if the listed genes are detected in the dataset. 
 
-### Generating plots comparing gene expression of orthologous genes in the datasets of poplar and arabidopsis.
+### Generating plots comparing gene expression of orthologous genes in the datasets of Poplar and arabidopsis.
 
 **Inputs:**
 
-* vascular_arabidopsis.rds (available on FigShare)
+* vascular_arabidopsis.rds (Zhang et al., 2021)
 * vascular_poplar.rds (available on FigShare)
 * NEW_list_of_genes_for_the_heatmap_final_vasculature.csv
 * Mappings_Populus_1to1_Arabidopsis_oct_28.txt
@@ -64,7 +64,7 @@ This rule generates the raw counts from datasets contained in an rds file. For e
 
 **Inputs:**
 
-* vascular_arabidopsis.rds (available on FigShare)
+* vascular_arabidopsis.rds (Zhang et al., 2021)
 * vascular_poplar.rds (available on FigShare)
 
 **Outputs:**
@@ -95,17 +95,17 @@ snakemake -c1 -p converting_gene_IDs
 
 ### Integrating the datasets on Asc-Seurat
 
-On Asc-Seurat, perform the integration using the file "configuration_file_for_integration_analysis.csv" as input and the default parameters.
+On Asc-Seurat, perform the integration using the file "configuration_file_for_integration_analysis.csv" as input and the default parameters of Asc-Seurat.
 
 ### analysis of the integrated dataset
 
-After obtaining the integrated dataset as an RDS file, which can also be downloaded from FigShare.
+Once the integrated data is generated, it is possible to infer the developmental trajectories of both datasets.
 
 **NOTE:** This step requires the installation of dynverse, as shown at https://dynverse.org/users/1-installation/. In addition, Docker must be installed and running since dynverse requires it.
 
 **Inputs:**
 
-* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds (available on FigShare)
+* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds (produced on Asc-Seurat).
 
 **Outputs:**
 
@@ -124,7 +124,7 @@ snakemake -c1 -p trajectory_inference_phloem
 
 **Inputs:**
 
-* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds (available on FigShare)
+* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds (produced on Asc-Seurat)
 
 **Outputs:**
 
@@ -147,7 +147,7 @@ Use TRADEseq (https://www.bioconductor.org/packages/release/bioc/html/tradeSeq.h
 
 **Inputs:**
 
-* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds (available on FigShare)
+* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds (produced on Asc-Seurat)
 
 **Outputs:**
 
@@ -162,7 +162,7 @@ snakemake -c 2 -p tradeseq_phloem
 
 **Inputs:**
 
-* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds  (available on FigShare)
+* CLUSTERED_vasculature_int_arab_poplar_oct_28.rds  (produced on Asc-Seurat)
 
 **Outputs:**
 
