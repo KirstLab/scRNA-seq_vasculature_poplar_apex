@@ -1,0 +1,54 @@
+# Intructions that are used by multiple rules
+rds_file_spec1: "vascular_arabidopsis.rds"
+rds_file_spec2: "vascular_poplar.rds"
+
+known_markers_for_vis: "NEW_list_of_genes_for_the_heatmap_final_vasculature.csv"
+1to1_orthologs: "Mappings_Populus_1to1_Arabidopsis_oct_28.txt"
+
+# generates_raw_counts_from_rds
+raw_couns_location:
+    species1: "data/species1/"
+    species2: "data/species2/"
+
+drop_util_outs:
+    [
+    "barcodes.tsv",
+    "genes.tsv",
+    "matrix.mtx"
+    ]
+
+# comparing_species
+out_paths:
+    [
+    "markers_expression",
+    "markers_expression/when_using_arabidopsis_markers/PNGs",
+    "markers_expression/when_using_arabidopsis_markers/SVGs"
+    ]
+
+# converting_gene_IDs
+inp_for_seurat:
+    [
+    "barcodes.tsv.gz",
+    "features.tsv.gz",
+    "matrix.mtx.gz"
+    ]
+
+# Integrated dataset
+integrated_loc: "CLUSTERED_vasculature_int_arab_poplar_oct_28.rds"
+
+groups_of_clusters:
+    g1: "8,10" # Phloem
+    g2: "8,0,5" # Xylem
+    g1_name: "Phloem"
+    g2_name: "Xylem"
+    start_cluster_g1: 8
+    start_cluster_g2: 8
+    spc_name1: "Arabidopsis" # Same as the configuration file used for integration
+    spc_name2: "Poplar"
+
+TIplots:
+    [
+    "TI_scatter",
+    "TI_dendrogram",
+    #"TI_graph"
+    ]
