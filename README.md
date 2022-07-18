@@ -11,7 +11,7 @@
 
 This repository contains the source code necessary to reproduce the results described in the manuscript "Single-cell analysis of the shoot apex vascular system differentiation in Populus."
 
-The clustering of the scRNA-seq data was performed on Asc-Seurat v2.1. The clustered datasets from Poplar can be downloaded from FigShare (10.6084/m9.figshare.20321787). The arabidopsis dataset was kindly provided by Tian-Qi Zhang, Yu Chen, and Jia-Wei Wang, authors of the paper entitled "A single-cell analysis of the Arabidopsis vegetative shoot apex," Developmental Cell 56, https://doi.org/10.1016/j.devcel.2021.02.021. To execute the code in this repository, readers need to contact the authors to acquire the dataset (in the rds format). Note that the source code expects the file containing the arabidopsis data to be named "vascular_arabidopsis.rds".
+The clustering of the scRNA-seq data was performed on Asc-Seurat v2.1. The clustered datasets from Populus can be downloaded from FigShare (10.6084/m9.figshare.20321787). The arabidopsis dataset was kindly provided by Tian-Qi Zhang, Yu Chen, and Jia-Wei Wang, authors of the paper entitled "A single-cell analysis of the Arabidopsis vegetative shoot apex," Developmental Cell 56, https://doi.org/10.1016/j.devcel.2021.02.021. To execute the code in this repository, readers need to contact the authors to acquire the dataset (in the rds format). Note that the source code expects the file containing the arabidopsis data to be named "vascular_arabidopsis.rds".
 
 To execute the analysis, R version 4.0 needs to be installed. In addition, the following packages are required: 
 
@@ -45,7 +45,7 @@ Before integrating the datasets, it is possible to show that the two datasets sh
 
 One plot will be generated for each row of the csv file if the listed genes are detected in the dataset. 
 
-### Generating plots comparing gene expression of orthologous genes in the datasets of Poplar and arabidopsis.
+### Generating plots comparing gene expression of orthologous genes in the datasets of Populus and arabidopsis.
 
 **Inputs:**
 
@@ -76,7 +76,7 @@ This rule generates the raw counts from datasets contained in an rds file. For e
 snakemake -c1 -p generates_raw_counts_from_rds
 ```
 
-### Using the orthologs mapping from orthofinder to rename Poplar genes
+### Using the orthologs mapping from orthofinder to rename Populus genes
 
 **Inputs:**
 
@@ -175,7 +175,7 @@ snakemake -c 2 -p tradeseq_phloem
 snakemake -c 2 -p tradeseq_xylem
 ```
 
-Rename poplar genes that were not in the list of orthologs 1-to-1 using orthologs listed on Phytozome.
+Rename Populus genes that were not in the list of orthologs 1-to-1 using orthologs listed on Phytozome.
 
 **Inputs:**
 
