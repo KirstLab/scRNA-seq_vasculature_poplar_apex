@@ -1,0 +1,14 @@
+.DS_Store
+.Rhistory
+.snakemake/
+data/
+markers_expression/
+markers_identified_by_asc_seurat/
+*.rds
+www/
+*.svg
+*.rda
+*.xlsx
+*.zip
+*.png
+*.docx
