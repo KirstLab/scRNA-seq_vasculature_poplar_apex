@@ -242,14 +242,10 @@ snakemake -c 2 -p generating_heatmaps
 
 **Outputs:**
 
-* All_cells_phloem_correlated_genes_heatmaps_same_dimention.svg
-* All_cells_phloem_correlated_genes_heatmaps_corrected_proportion.svg
-* All_cells_phloem_UNcorrelated_genes_heatmaps_same_dimention.svg
-* All_cells_phloem_UNcorrelated_genes_heatmaps_corrected_proportion.svg
-* All_cells_xylem_correlated_genes_heatmaps_same_dimention.svg
-* All_cells_xylem_correlated_genes_heatmaps_corrected_proportion.svg
-* All_cells_xylem_UNcorrelated_genes_heatmaps_same_dimention.svg
-* All_cells_xylem_UNcorrelated_genes_heatmaps_corrected_proportion.svg
+* All_cells_phloem_all_genes_sig_in_both_datasets.svg
+* All_cells_phloem_genes_sig_ONLY_IN_POPLAR.svg
+* All_cells_xylem_all_genes_sig_in_both_datasets.svg
+* All_cells_xylem_genes_sig_ONLY_IN_POPLAR.svg
 
 ```sh
 snakemake -c 2 -p generate_heatmap_without_bins
